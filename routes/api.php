@@ -9,3 +9,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('login',[LoginController::class,'login']);
+Route::apiResource('productos', \App\Http\Controllers\ProductController::class)->parameters([
+    'productos' => 'product'
+]);
